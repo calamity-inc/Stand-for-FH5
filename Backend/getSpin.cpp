@@ -12,7 +12,7 @@ namespace Stand
 {
 	static void getSpin(int amount, void* func)
 	{
-		if (!ready())
+		if (!func)
 		{
 			return;
 		}

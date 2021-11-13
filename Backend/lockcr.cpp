@@ -8,14 +8,13 @@ namespace Stand
 {
 	EXPOSED(void) lockcrSet(int amount)
 	{
-		if (!ready())
+		if (Pointers::get_credits)
 		{
-			return;
+			AssemblyBuilder b{};
+			b.setA(amount);
+			b.retn();
+			State::get_credits_patch.patch(Pointers::get_credits, b.data(), b.size());
 		}
-		AssemblyBuilder b{};
-		b.setA(amount);
-		b.retn();
-		State::get_credits_patch.patch(Pointers::get_credits, b.data(), b.size());
 	}
 
 	EXPOSED(void) lockcrUnset()

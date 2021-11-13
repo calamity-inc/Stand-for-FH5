@@ -20,18 +20,21 @@ namespace Stand
 
 	void set_skill_point_used_xp_values(int amount, int xp_value)
 	{
-		auto p = Pointer(State::game_mod->externalRead<void*>(Pointers::something_xp));
-		p = Pointer(State::game_mod->externalRead<void*>(p.add(0x50)));
-		p = Pointer(State::game_mod->externalRead<void*>(p.add(0x48)));
-		p = Pointer(State::game_mod->externalRead<void*>(p.add(0x50)));
-		p = Pointer(State::game_mod->externalRead<void*>(p.add(0xD0)));
-		p = Pointer(State::game_mod->externalRead<void*>(p.add(0x18)));
-		p = Pointer(State::game_mod->externalRead<void*>(p.add(0x50)));
-		
-		if (amount != 0)
+		if (Pointers::something_xp)
 		{
-			State::game_mod->externalWrite<int>(p.add(0xA8), amount);
+			auto p = Pointer(State::game_mod->externalRead<void*>(Pointers::something_xp));
+			p = Pointer(State::game_mod->externalRead<void*>(p.add(0x50)));
+			p = Pointer(State::game_mod->externalRead<void*>(p.add(0x48)));
+			p = Pointer(State::game_mod->externalRead<void*>(p.add(0x50)));
+			p = Pointer(State::game_mod->externalRead<void*>(p.add(0xD0)));
+			p = Pointer(State::game_mod->externalRead<void*>(p.add(0x18)));
+			p = Pointer(State::game_mod->externalRead<void*>(p.add(0x50)));
+
+			if (amount != 0)
+			{
+				State::game_mod->externalWrite<int>(p.add(0xA8), amount);
+			}
+			State::game_mod->externalWrite<int>(p.add(0xAC), xp_value);
 		}
-		State::game_mod->externalWrite<int>(p.add(0xAC), xp_value);
 	}
 }

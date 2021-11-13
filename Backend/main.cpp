@@ -57,7 +57,7 @@ namespace Stand
 			}
 		}
 
-		if (ready())
+		if (SqlQueryQueue::ready())
 		{
 			SqlQueryQueue::checkRun();
 		}
@@ -65,11 +65,8 @@ namespace Stand
 
 	EXPOSED(void) die()
 	{
-		if (ready())
-		{
-			State::get_credits_patch.unpatch();
-			set_skill_point_used_xp_values(0, 200);
-			autoshowAvailableSet(0);
-		}
+		State::get_credits_patch.unpatch();
+		set_skill_point_used_xp_values(0, 200);
+		autoshowAvailableSet(0);
 	}
 }

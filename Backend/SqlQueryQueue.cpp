@@ -57,6 +57,11 @@ namespace Stand
 		return false;
 	}
 
+	bool SqlQueryQueue::ready()
+	{
+		return Pointers::sqlhijack_detour.as<void*>() != nullptr;
+	}
+
 	void SqlQueryQueue::add(std::string&& query)
 	{
 		queue.emplace(std::move(query));
