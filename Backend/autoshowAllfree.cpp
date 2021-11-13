@@ -6,6 +6,6 @@ namespace Stand
 {
 	EXPOSED(void) autoshowAllfree()
 	{
-		SqlQueryQueue::add("UPDATE Data_Car SET BaseCost=1");
+		SqlQueryQueue::add("UPDATE Data_Car SET BaseCost=0");
 	}
 }
