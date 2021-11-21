@@ -4,6 +4,7 @@
 
 #include "addxp.hpp"
 #include "autoshowAvailable.hpp"
+#include "Pointers.hpp"
 #include "SqlQueryQueue.hpp"
 
 BOOL APIENTRY DllMain(HMODULE hmod, DWORD reason, PVOID)
@@ -37,6 +38,15 @@ namespace Stand
 			State::game_mod.reset();
 			State::patterns_scanned = false;
 			State::get_credits_patch.forget();
+
+			Pointers::get_credits = nullptr;
+			Pointers::get_spin_regular = nullptr;
+			Pointers::get_spin_super = nullptr;
+			Pointers::available_in_autoshow_cond = nullptr;
+			Pointers::sqlhijack_query = nullptr;
+			Pointers::sqlhijack_detour = nullptr;
+			Pointers::something_xp = nullptr;
+
 			return;
 		}
 
