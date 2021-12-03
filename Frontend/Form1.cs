@@ -78,7 +78,7 @@ namespace Stand
 				}
 				else
 				{
-					toolStripStatusLabel1.Text = "Failed to find all patterns.";
+					toolStripStatusLabel1.Text = "Failed to find all patterns. (Code: " + status + ")";
 				}
 				mainloopTimer.Start();
 			}

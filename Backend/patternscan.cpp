@@ -58,17 +58,31 @@ namespace Stand
 	{
 		if (State::patterns_scanned)
 		{
-			if (Pointers::get_credits
-				&& Pointers::get_spin_regular
-				&& Pointers::get_spin_super
-				&& Pointers::available_in_autoshow_cond
-				//&& Pointers::sql
-				&& Pointers::sqlhijack_query
-				)
+			if (!Pointers::get_credits)
 			{
-				return 1;
+				return 2;
 			}
-			return 2;
+			if (!Pointers::get_spin_regular)
+			{
+				return 3;
+			}
+			if (!Pointers::get_spin_super)
+			{
+				return 4;
+			}
+			if (!Pointers::available_in_autoshow_cond)
+			{
+				return 6;
+			}
+			if (!Pointers::sqlhijack_query)
+			{
+				return 7;
+			}
+			/*if (!Pointers::sql)
+			{
+				return 8;
+			}*/
+			return 1;
 		}
 		return 0;
 	}
