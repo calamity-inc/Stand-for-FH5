@@ -31,7 +31,7 @@ namespace Stand
 			}
 			else
 			{
-				toolStripStatusLabel1.Text = "Please open Forza Horizon 5";
+				toolStripStatusLabel1.Text = "Please open Forza Horizon 5.";
 				processWaitTimer.Start();
 			}
 		}
