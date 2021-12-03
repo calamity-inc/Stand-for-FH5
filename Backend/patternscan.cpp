@@ -19,13 +19,13 @@ namespace Stand
 			}
 
 			{
-				SIG_INST("48 89 5C 24 08 57 48 83 EC 30 48 8B 01 FF 50 30 8B D8 48 8D 54 24 20 48 8B 0D ? ? ? ? E8 ? ? ? ? 90 44 8B C3 33 D2");
-				Pointers::get_spin_regular = State::game_mod->externalScan(sig_inst).as<get_spin_t>();
+				SIG_INST("48 8B 0D ? ? ? ? E8 ? ? ? ? 90 44 8B C3 33 D2");
+				Pointers::get_spin_regular = State::game_mod->externalScan(sig_inst).sub(23).as<get_spin_t>();
 			}
 
 			{
-				SIG_INST("48 89 5C 24 08 57 48 83 EC 30 48 8B 01 FF 50 30 8B D8 48 8D 54 24 20 48 8B 0D ? ? ? ? E8 ? ? ? ? 90 44 8B C3 BA 01 00 00 00");
-				Pointers::get_spin_super = State::game_mod->externalScan(sig_inst).as<get_spin_t>();
+				SIG_INST("48 8B 0D ? ? ? ? E8 ? ? ? ? 90 44 8B C3 BA 01");
+				Pointers::get_spin_super = State::game_mod->externalScan(sig_inst).sub(23).as<get_spin_t>();
 			}
 
 			{
