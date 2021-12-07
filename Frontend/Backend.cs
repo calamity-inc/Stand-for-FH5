@@ -44,9 +44,6 @@ namespace Stand
 		// ...
 
 		[DllImport(@"Backend.dll", CallingConvention = CallingConvention.Cdecl)]
-		public static extern void addxp(int amount);
-
-		[DllImport(@"Backend.dll", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void autoshowAllfree();
 
 		[DllImport(@"Backend.dll", CallingConvention = CallingConvention.Cdecl)]

@@ -176,11 +176,6 @@ namespace Stand
 			Backend.autoshowAvailableSet(autoshowAvailableBox.SelectedIndex);
 		}
 
-		private void addxpBtn_Click(object sender, EventArgs e)
-		{
-			Backend.addxp((int)addxpVal.Value);
-		}
-
 		private void autoshowAllfree_Click(object sender, EventArgs e)
 		{
 			Backend.autoshowAllfree();

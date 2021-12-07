@@ -37,13 +37,12 @@ namespace Stand
 			this.lockcrVal = new System.Windows.Forms.NumericUpDown();
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.addxpBtn = new System.Windows.Forms.Button();
-			this.addxpVal = new System.Windows.Forms.NumericUpDown();
 			this.getSpinSuperVal = new System.Windows.Forms.NumericUpDown();
 			this.getSpinRegularVal = new System.Windows.Forms.NumericUpDown();
 			this.getSpinRegularBtn = new System.Windows.Forms.Button();
 			this.getSpinSuperBtn = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.autoshowAllfree = new System.Windows.Forms.Button();
 			this.autoshowAvailableLabel = new System.Windows.Forms.Label();
 			this.autoshowAvailableBox = new System.Windows.Forms.ComboBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -52,12 +51,10 @@ namespace Stand
 			this.patternscanTimer = new System.Windows.Forms.Timer(this.components);
 			this.mainloopTimer = new System.Windows.Forms.Timer(this.components);
 			this.processStartTimer = new System.Windows.Forms.Timer(this.components);
-			this.autoshowAllfree = new System.Windows.Forms.Button();
 			this.statusStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.lockcrVal)).BeginInit();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.addxpVal)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.getSpinSuperVal)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.getSpinRegularVal)).BeginInit();
 			this.groupBox2.SuspendLayout();
@@ -68,7 +65,7 @@ namespace Stand
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-			this.statusStrip1.Location = new System.Drawing.Point(0, 181);
+			this.statusStrip1.Location = new System.Drawing.Point(0, 155);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Size = new System.Drawing.Size(686, 22);
 			this.statusStrip1.SizingGrip = false;
@@ -117,13 +114,11 @@ namespace Stand
 			this.flowLayoutPanel1.Controls.Add(this.groupBox3);
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(662, 166);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(662, 136);
 			this.flowLayoutPanel1.TabIndex = 4;
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.addxpBtn);
-			this.groupBox1.Controls.Add(this.addxpVal);
 			this.groupBox1.Controls.Add(this.getSpinSuperVal);
 			this.groupBox1.Controls.Add(this.getSpinRegularVal);
 			this.groupBox1.Controls.Add(this.getSpinRegularBtn);
@@ -132,37 +127,10 @@ namespace Stand
 			this.groupBox1.Controls.Add(this.lockcrToggle);
 			this.groupBox1.Location = new System.Drawing.Point(3, 3);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(269, 152);
+			this.groupBox1.Size = new System.Drawing.Size(269, 121);
 			this.groupBox1.TabIndex = 2;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Self";
-			// 
-			// addxpBtn
-			// 
-			this.addxpBtn.Location = new System.Drawing.Point(131, 115);
-			this.addxpBtn.Name = "addxpBtn";
-			this.addxpBtn.Size = new System.Drawing.Size(130, 23);
-			this.addxpBtn.TabIndex = 10;
-			this.addxpBtn.Text = "Add XP";
-			this.addxpBtn.UseVisualStyleBackColor = true;
-			this.addxpBtn.Click += new System.EventHandler(this.addxpBtn_Click);
-			// 
-			// addxpVal
-			// 
-			this.addxpVal.Location = new System.Drawing.Point(6, 115);
-			this.addxpVal.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-			this.addxpVal.Name = "addxpVal";
-			this.addxpVal.Size = new System.Drawing.Size(120, 20);
-			this.addxpVal.TabIndex = 9;
-			this.addxpVal.Value = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
 			// 
 			// getSpinSuperVal
 			// 
@@ -240,6 +208,16 @@ namespace Stand
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Autoshow";
 			// 
+			// autoshowAllfree
+			// 
+			this.autoshowAllfree.Location = new System.Drawing.Point(10, 42);
+			this.autoshowAllfree.Name = "autoshowAllfree";
+			this.autoshowAllfree.Size = new System.Drawing.Size(178, 23);
+			this.autoshowAllfree.TabIndex = 7;
+			this.autoshowAllfree.Text = "Make All Cars Free";
+			this.autoshowAllfree.UseVisualStyleBackColor = true;
+			this.autoshowAllfree.Click += new System.EventHandler(this.autoshowAllfree_Click);
+			// 
 			// autoshowAvailableLabel
 			// 
 			this.autoshowAvailableLabel.AutoSize = true;
@@ -302,21 +280,11 @@ namespace Stand
 			this.processStartTimer.Interval = 30000;
 			this.processStartTimer.Tick += new System.EventHandler(this.processStartTimer_Tick);
 			// 
-			// autoshowAllfree
-			// 
-			this.autoshowAllfree.Location = new System.Drawing.Point(10, 42);
-			this.autoshowAllfree.Name = "autoshowAllfree";
-			this.autoshowAllfree.Size = new System.Drawing.Size(178, 23);
-			this.autoshowAllfree.TabIndex = 7;
-			this.autoshowAllfree.Text = "Make All Cars Free";
-			this.autoshowAllfree.UseVisualStyleBackColor = true;
-			this.autoshowAllfree.Click += new System.EventHandler(this.autoshowAllfree_Click);
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(686, 203);
+			this.ClientSize = new System.Drawing.Size(686, 177);
 			this.Controls.Add(this.flowLayoutPanel1);
 			this.Controls.Add(this.statusStrip1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -331,7 +299,6 @@ namespace Stand
 			this.flowLayoutPanel1.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.addxpVal)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.getSpinSuperVal)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.getSpinRegularVal)).EndInit();
 			this.groupBox2.ResumeLayout(false);
@@ -363,8 +330,6 @@ namespace Stand
 		private System.Windows.Forms.Label autoshowAvailableLabel;
 		private System.Windows.Forms.ComboBox autoshowAvailableBox;
 		private System.Windows.Forms.Timer processStartTimer;
-		private System.Windows.Forms.Button addxpBtn;
-		private System.Windows.Forms.NumericUpDown addxpVal;
 		private System.Windows.Forms.Button autoshowAllfree;
 	}
 }

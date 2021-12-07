@@ -6,7 +6,6 @@
     <ClCompile Include="patternscan.cpp" />
     <ClCompile Include="lockcr.cpp" />
     <ClCompile Include="autoshowAvailable.cpp" />
-    <ClCompile Include="addxp.cpp" />
     <ClCompile Include="SqlQueryQueue.cpp" />
     <ClCompile Include="autoshowAllfree.cpp" />
   </ItemGroup>
@@ -20,6 +19,5 @@
     <ClInclude Include="autoshowAvailable.hpp" />
     <ClInclude Include="sql.hpp" />
     <ClInclude Include="SqlQueryQueue.hpp" />
-    <ClInclude Include="addxp.hpp" />
   </ItemGroup>
 </Project>

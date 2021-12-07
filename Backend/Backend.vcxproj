@@ -96,7 +96,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="addxp.cpp" />
     <ClCompile Include="autoshowAllfree.cpp" />
     <ClCompile Include="autoshowAvailable.cpp" />
     <ClCompile Include="getSpin.cpp" />
@@ -106,7 +105,6 @@
     <ClCompile Include="SqlQueryQueue.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="addxp.hpp" />
     <ClInclude Include="AllocRaii.hpp" />
     <ClInclude Include="autoshowAvailable.hpp" />
     <ClInclude Include="common.hpp" />

@@ -45,11 +45,6 @@ namespace Stand
 				Pointers::sqlhijack_detour = p.add(0x57);
 			}
 
-			{
-				SIG_INST("0F 85 CC 00 00 00 48 8B 3D ? ? ? ? 48 85 FF");
-				Pointers::something_xp = State::game_mod->externalScan(sig_inst).add(9).externalRip(*State::game_mod);
-			}
-
 			State::patterns_scanned = true;
 		});
 	}
@@ -82,10 +77,6 @@ namespace Stand
 			{
 				return 8;
 			}*/
-			if (!Pointers::something_xp)
-			{
-				return 8;
-			}
 			return 1;
 		}
 		return 0;

@@ -17,6 +17,5 @@ namespace Stand
 		//inline static Pointer sql;
 		inline static Pointer sqlhijack_query; // char*
 		inline static Pointer sqlhijack_detour;
-		inline static Pointer something_xp;
 	};
 }

@@ -2,7 +2,6 @@
 
 #include <Window.hpp>
 
-#include "addxp.hpp"
 #include "autoshowAvailable.hpp"
 #include "Pointers.hpp"
 #include "SqlQueryQueue.hpp"
@@ -45,7 +44,6 @@ namespace Stand
 			Pointers::available_in_autoshow_cond = nullptr;
 			Pointers::sqlhijack_query = nullptr;
 			Pointers::sqlhijack_detour = nullptr;
-			Pointers::something_xp = nullptr;
 
 			return;
 		}
@@ -76,7 +74,6 @@ namespace Stand
 	EXPOSED(void) die()
 	{
 		State::get_credits_patch.unpatch();
-		set_skill_point_used_xp_values(0, 200);
 		autoshowAvailableSet(0);
 	}
 }
