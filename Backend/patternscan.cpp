@@ -82,6 +82,10 @@ namespace Stand
 			{
 				return 8;
 			}*/
+			if (!Pointers::something_xp)
+			{
+				return 8;
+			}
 			return 1;
 		}
 		return 0;
