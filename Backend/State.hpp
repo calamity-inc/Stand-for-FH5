@@ -2,19 +2,19 @@
 
 #include <memory>
 
+#include <BytepatchExternal.hpp>
 #include <Module.hpp>
 #include <Process.hpp>
-
-#include "ExternalBytepatch.hpp"
+#include <UniquePtr.hpp>
 
 namespace Stand
 {
 	struct State
 	{
-		inline static std::unique_ptr<Process> game_process;
-		inline static std::shared_ptr<Module> game_mod;
+		inline static soup::UniquePtr<soup::Process> game_process;
+		inline static std::shared_ptr<soup::Module> game_mod;
 		inline static bool patterns_scanned = false;
 		inline static bool game_focused = false;
-		inline static ExternalBytepatch get_credits_patch;
+		inline static soup::BytepatchExternal get_credits_patch;
 	};
 }

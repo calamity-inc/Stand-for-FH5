@@ -14,8 +14,6 @@
     <ClInclude Include="Pointers.hpp" />
     <ClInclude Include="SkillTreePerkVft.hpp" />
     <ClInclude Include="common.hpp" />
-    <ClInclude Include="AllocRaii.hpp" />
-    <ClInclude Include="ExternalBytepatch.hpp" />
     <ClInclude Include="autoshowAvailable.hpp" />
     <ClInclude Include="sql.hpp" />
     <ClInclude Include="SqlQueryQueue.hpp" />

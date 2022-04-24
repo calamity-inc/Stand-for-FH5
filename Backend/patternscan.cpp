@@ -1,6 +1,6 @@
 #include "common.hpp"
 
-#include <macros_sigs.hpp>
+#include <pattern_macros.hpp>
 #include <Pattern.hpp>
 #include <Thread.hpp>
 
@@ -10,7 +10,7 @@ namespace Stand
 {
 	EXPOSED(void) patternscanInit()
 	{
-		Thread t([]()
+		soup::Thread t([]()
 		{
 			{
 				SIG_INST("48 89 5C 24 10 48 89 7C 24 18 55 48 8D 6C 24 A9 48 81 EC B0 00 00 00 33 DB 89 5D 67 48 8B 79 58");
@@ -47,6 +47,7 @@ namespace Stand
 
 			State::patterns_scanned = true;
 		});
+		t.awaitCompletion();
 	}
 
 	EXPOSED(int) patternscanStatus()

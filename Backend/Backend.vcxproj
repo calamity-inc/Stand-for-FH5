@@ -59,7 +59,7 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <CallingConvention>Cdecl</CallingConvention>
-      <AdditionalIncludeDirectories>../../Stand Commons;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../Soup/soup;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsWinRT>false</CompileAsWinRT>
       <StringPooling>true</StringPooling>
       <FunctionLevelLinking>false</FunctionLevelLinking>
@@ -67,7 +67,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>../../Stand Commons/bin/$(Configuration)/Stand Commons.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../../Soup/bin/$(Configuration)DLL/Soup.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -81,7 +81,7 @@
       <CallingConvention>Cdecl</CallingConvention>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
-      <AdditionalIncludeDirectories>../../Stand Commons;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../Soup/soup;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsWinRT>false</CompileAsWinRT>
       <StringPooling>true</StringPooling>
     </ClCompile>
@@ -90,7 +90,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>../../Stand Commons/bin/$(Configuration)/Stand Commons.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../../Soup/bin/$(Configuration)DLL/Soup.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <AdditionalOptions>"/pdbaltpath:How dare you?" /base:0x1337694200000000 %(AdditionalOptions)</AdditionalOptions>
     </Link>
@@ -105,10 +105,8 @@
     <ClCompile Include="SqlQueryQueue.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AllocRaii.hpp" />
     <ClInclude Include="autoshowAvailable.hpp" />
     <ClInclude Include="common.hpp" />
-    <ClInclude Include="ExternalBytepatch.hpp" />
     <ClInclude Include="Pointers.hpp" />
     <ClInclude Include="SqlQueryQueue.hpp" />
     <ClInclude Include="SkillTreePerkVft.hpp" />

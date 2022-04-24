@@ -1,7 +1,7 @@
 #include "SqlQueryQueue.hpp"
 
+#include <AllocRaiiRemote.hpp>
 #include <AssemblyBuilder.hpp>
-#include <RemoteAllocRaii.hpp>
 
 #include "Pointers.hpp"
 #include "State.hpp"
@@ -18,14 +18,14 @@ namespace Stand
 		0x49, 0xC7, 0xC6, 0xFF, 0xFF, 0xFF, 0xFF, 0x4D, 0x8B, 0xC6, 0x0F, 0x1F, 0x80, 0x00, 0x00, 0x00, 0x00, 0x49, 0xFF, 0xC0, 0x46, 0x38, 0x3C, 0x00, 0x75, 0xF7
 	};
 
-	static std::unique_ptr<RemoteAllocRaii> restore_proc;
+	static soup::UniquePtr<soup::AllocRaiiRemote> restore_proc;
 
 	void SqlQueryQueue::ensureRestoreProc()
 	{
 		if (!restore_proc)
 		{
-			AssemblyBuilder b{};
-			b.beginFunction();
+			soup::AssemblyBuilder b{};
+			b.funcBegin();
 
 			b.setA(Pointers::sqlhijack_detour.as<uint64_t>());
 			for (const auto& v : detour_og)
@@ -41,7 +41,7 @@ namespace Stand
 				b.incRAX();
 			}
 
-			b.endFunction();
+			b.funcEnd();
 			restore_proc = State::game_mod->copyInto(b.data(), b.size());
 		}
 	}
@@ -75,7 +75,7 @@ namespace Stand
 			ensureRestoreProc();
 			auto query = std::move(queue.front());
 			queue.pop();
-			AssemblyBuilder b{};
+			soup::AssemblyBuilder b{};
 			b.nop();
 			b.nop();
 			b.nop();

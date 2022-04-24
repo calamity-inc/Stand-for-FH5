@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-#include "Pointer.hpp"
+#include <Pointer.hpp>
 
 namespace Stand
 {
@@ -15,7 +15,7 @@ namespace Stand
 		inline static get_spin_t get_spin_super;
 		inline static char* available_in_autoshow_cond;
 		//inline static Pointer sql;
-		inline static Pointer sqlhijack_query; // char*
-		inline static Pointer sqlhijack_detour;
+		inline static soup::Pointer sqlhijack_query; // char*
+		inline static soup::Pointer sqlhijack_detour;
 	};
 }

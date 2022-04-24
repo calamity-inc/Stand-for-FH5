@@ -1,7 +1,7 @@
 #include <cstring>
 
+#include <AllocRaiiRemote.hpp>
 #include <AssemblyBuilder.hpp>
-#include <RemoteAllocRaii.hpp>
 
 #include "common.hpp"
 #include "Pointers.hpp"
@@ -16,7 +16,7 @@ namespace Stand
 		{
 			return;
 		}
-		AssemblyBuilder b{};
+		soup::AssemblyBuilder b{};
 		b.setA(amount);
 		b.retn();
 		auto vfunc = State::game_mod->copyInto(b.data(), b.size());

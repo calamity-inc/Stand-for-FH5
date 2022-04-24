@@ -19,7 +19,7 @@ namespace Stand
 {
 	EXPOSED(bool) checkProcess()
 	{
-		if (State::game_process = Process::get("ForzaHorizon5.exe"))
+		if (State::game_process = soup::Process::get("ForzaHorizon5.exe"))
 		{
 			State::game_mod = State::game_process->open();
 			State::get_credits_patch.mod = State::game_mod;
@@ -30,7 +30,7 @@ namespace Stand
 
 	EXPOSED(void) mainloop(char* out, size_t outSize)
 	{
-		if (!Process::get(State::game_process->id))
+		if (!soup::Process::get(State::game_process->id))
 		{
 			strcpy_s(out, outSize, "reset");
 			State::game_process.reset();
@@ -48,7 +48,7 @@ namespace Stand
 			return;
 		}
 
-		if (Window::getFocsed().getOwnerProcessId() == State::game_process->id)
+		if (soup::Window::getFocused().getOwnerPid() == State::game_process->id)
 		{
 			if (!State::game_focused)
 			{
