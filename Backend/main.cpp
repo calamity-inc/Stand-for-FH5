@@ -79,6 +79,9 @@ namespace Stand
 	{
 		State::get_credits_patch.unpatch();
 		autoshowAvailableSet(0);
-		SqlQueryQueue::finishQuery();
+		if (SqlQueryQueue::ready())
+		{
+			SqlQueryQueue::finishQuery();
+		}
 	}
 }
