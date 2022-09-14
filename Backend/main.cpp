@@ -48,7 +48,6 @@ namespace Stand
 			Pointers::get_spin_super = nullptr;
 			Pointers::available_in_autoshow_cond = nullptr;
 			Pointers::sqlhijack_query = nullptr;
-			Pointers::sqlhijack_detour = nullptr;
 
 			return;
 		}
@@ -80,5 +79,6 @@ namespace Stand
 	{
 		State::get_credits_patch.unpatch();
 		autoshowAvailableSet(0);
+		SqlQueryQueue::finishQuery();
 	}
 }

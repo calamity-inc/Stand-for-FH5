@@ -42,7 +42,6 @@ namespace Stand
 				SIG_INST("66 49 0F 7E D9 48 8D 15 ? ? ? ? 48 8D 4D 00 E8");
 				auto p = State::game_mod->externalScan(sig_inst);
 				Pointers::sqlhijack_query = p.add(8).externalRip(*State::game_mod);
-				Pointers::sqlhijack_detour = p.add(0x57);
 			}
 
 			State::patterns_scanned = true;

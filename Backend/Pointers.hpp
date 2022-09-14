@@ -16,6 +16,5 @@ namespace Stand
 		inline static char* available_in_autoshow_cond;
 		//inline static Pointer sql;
 		inline static soup::Pointer sqlhijack_query; // char*
-		inline static soup::Pointer sqlhijack_detour;
 	};
 }
