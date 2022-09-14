@@ -19,7 +19,12 @@ namespace Stand
 {
 	EXPOSED(bool) checkProcess()
 	{
-		if (State::game_process = soup::Process::get("forzahorizon5.exe"))
+		State::game_process = soup::Process::get("forzahorizon5.exe"); // Steam
+		if (!State::game_process)
+		{
+			State::game_process = soup::Process::get("ForzaHorizon5.exe"); // Xbox
+		}
+		if (State::game_process)
 		{
 			State::game_mod = State::game_process->open();
 			State::get_credits_patch.mod = State::game_mod;
