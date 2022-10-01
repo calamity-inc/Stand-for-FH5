@@ -33,8 +33,6 @@ namespace Stand
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-			this.lockcrToggle = new System.Windows.Forms.CheckBox();
-			this.lockcrVal = new System.Windows.Forms.NumericUpDown();
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.getSpinSuperVal = new System.Windows.Forms.NumericUpDown();
@@ -52,7 +50,6 @@ namespace Stand
 			this.mainloopTimer = new System.Windows.Forms.Timer(this.components);
 			this.processStartTimer = new System.Windows.Forms.Timer(this.components);
 			this.statusStrip1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.lockcrVal)).BeginInit();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.getSpinSuperVal)).BeginInit();
@@ -65,7 +62,7 @@ namespace Stand
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-			this.statusStrip1.Location = new System.Drawing.Point(0, 155);
+			this.statusStrip1.Location = new System.Drawing.Point(0, 118);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Size = new System.Drawing.Size(686, 22);
 			this.statusStrip1.SizingGrip = false;
@@ -78,35 +75,6 @@ namespace Stand
 			this.toolStripStatusLabel1.Size = new System.Drawing.Size(74, 17);
 			this.toolStripStatusLabel1.Text = "Please wait...";
 			// 
-			// lockcrToggle
-			// 
-			this.lockcrToggle.AutoSize = true;
-			this.lockcrToggle.Location = new System.Drawing.Point(6, 24);
-			this.lockcrToggle.Name = "lockcrToggle";
-			this.lockcrToggle.Size = new System.Drawing.Size(85, 17);
-			this.lockcrToggle.TabIndex = 3;
-			this.lockcrToggle.Text = "Lock Credits";
-			this.lockcrToggle.UseVisualStyleBackColor = true;
-			this.lockcrToggle.CheckedChanged += new System.EventHandler(this.lockcrToggle_CheckedChanged);
-			// 
-			// lockcrVal
-			// 
-			this.lockcrVal.Location = new System.Drawing.Point(97, 21);
-			this.lockcrVal.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-			this.lockcrVal.Name = "lockcrVal";
-			this.lockcrVal.Size = new System.Drawing.Size(164, 20);
-			this.lockcrVal.TabIndex = 4;
-			this.lockcrVal.Value = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-			this.lockcrVal.ValueChanged += new System.EventHandler(this.lockcrVal_ValueChanged);
-			// 
 			// flowLayoutPanel1
 			// 
 			this.flowLayoutPanel1.Controls.Add(this.groupBox1);
@@ -114,7 +82,7 @@ namespace Stand
 			this.flowLayoutPanel1.Controls.Add(this.groupBox3);
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(662, 136);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(662, 99);
 			this.flowLayoutPanel1.TabIndex = 4;
 			// 
 			// groupBox1
@@ -123,18 +91,16 @@ namespace Stand
 			this.groupBox1.Controls.Add(this.getSpinRegularVal);
 			this.groupBox1.Controls.Add(this.getSpinRegularBtn);
 			this.groupBox1.Controls.Add(this.getSpinSuperBtn);
-			this.groupBox1.Controls.Add(this.lockcrVal);
-			this.groupBox1.Controls.Add(this.lockcrToggle);
 			this.groupBox1.Location = new System.Drawing.Point(3, 3);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(269, 121);
+			this.groupBox1.Size = new System.Drawing.Size(269, 81);
 			this.groupBox1.TabIndex = 2;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Self";
 			// 
 			// getSpinSuperVal
 			// 
-			this.getSpinSuperVal.Location = new System.Drawing.Point(6, 89);
+			this.getSpinSuperVal.Location = new System.Drawing.Point(6, 45);
 			this.getSpinSuperVal.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -156,7 +122,7 @@ namespace Stand
 			// 
 			// getSpinRegularVal
 			// 
-			this.getSpinRegularVal.Location = new System.Drawing.Point(6, 61);
+			this.getSpinRegularVal.Location = new System.Drawing.Point(6, 17);
 			this.getSpinRegularVal.Maximum = new decimal(new int[] {
             999999999,
             0,
@@ -178,7 +144,7 @@ namespace Stand
 			// 
 			// getSpinRegularBtn
 			// 
-			this.getSpinRegularBtn.Location = new System.Drawing.Point(131, 58);
+			this.getSpinRegularBtn.Location = new System.Drawing.Point(131, 14);
 			this.getSpinRegularBtn.Name = "getSpinRegularBtn";
 			this.getSpinRegularBtn.Size = new System.Drawing.Size(130, 23);
 			this.getSpinRegularBtn.TabIndex = 6;
@@ -188,7 +154,7 @@ namespace Stand
 			// 
 			// getSpinSuperBtn
 			// 
-			this.getSpinSuperBtn.Location = new System.Drawing.Point(131, 86);
+			this.getSpinSuperBtn.Location = new System.Drawing.Point(131, 42);
 			this.getSpinSuperBtn.Name = "getSpinSuperBtn";
 			this.getSpinSuperBtn.Size = new System.Drawing.Size(130, 23);
 			this.getSpinSuperBtn.TabIndex = 8;
@@ -284,7 +250,7 @@ namespace Stand
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(686, 177);
+			this.ClientSize = new System.Drawing.Size(686, 140);
 			this.Controls.Add(this.flowLayoutPanel1);
 			this.Controls.Add(this.statusStrip1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -295,10 +261,8 @@ namespace Stand
 			this.Resize += new System.EventHandler(this.Form1_Resize);
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.lockcrVal)).EndInit();
 			this.flowLayoutPanel1.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.getSpinSuperVal)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.getSpinRegularVal)).EndInit();
 			this.groupBox2.ResumeLayout(false);
@@ -313,8 +277,6 @@ namespace Stand
 		#endregion
 		private System.Windows.Forms.StatusStrip statusStrip1;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-		private System.Windows.Forms.CheckBox lockcrToggle;
-		private System.Windows.Forms.NumericUpDown lockcrVal;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Timer processWaitTimer;

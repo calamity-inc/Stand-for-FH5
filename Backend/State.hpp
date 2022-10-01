@@ -15,6 +15,5 @@ namespace Stand
 		inline static std::shared_ptr<soup::Module> game_mod;
 		inline static bool patterns_scanned = false;
 		inline static bool game_focused = false;
-		inline static soup::BytepatchExternal get_credits_patch;
 	};
 }

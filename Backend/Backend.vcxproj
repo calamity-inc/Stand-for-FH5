@@ -99,7 +99,6 @@
     <ClCompile Include="autoshowAllfree.cpp" />
     <ClCompile Include="autoshowAvailable.cpp" />
     <ClCompile Include="getSpin.cpp" />
-    <ClCompile Include="lockcr.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="patternscan.cpp" />
     <ClCompile Include="SqlQueryQueue.cpp" />

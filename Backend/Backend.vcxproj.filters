@@ -4,7 +4,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="getSpin.cpp" />
     <ClCompile Include="patternscan.cpp" />
-    <ClCompile Include="lockcr.cpp" />
     <ClCompile Include="autoshowAvailable.cpp" />
     <ClCompile Include="SqlQueryQueue.cpp" />
     <ClCompile Include="autoshowAllfree.cpp" />

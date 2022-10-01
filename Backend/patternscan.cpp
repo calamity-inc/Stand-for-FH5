@@ -13,12 +13,6 @@ namespace Stand
 		soup::Thread t([]()
 		{
 			{
-				SIG_INST("48 89 5C 24 10 48 89 7C 24 18 55 48 8D 6C 24 A9 48 81 EC B0 00 00 00 33 DB 89 5D 67 48 8B 79 58");
-				auto p = State::game_mod->externalScan(sig_inst);
-				Pointers::get_credits = p.as<uint8_t*>();
-			}
-
-			{
 				SIG_INST("48 8B 0D ? ? ? ? E8 ? ? ? ? 90 44 8B C3 33 D2");
 				Pointers::get_spin_regular = State::game_mod->externalScan(sig_inst).sub(23).as<get_spin_t>();
 			}
@@ -53,29 +47,25 @@ namespace Stand
 	{
 		if (State::patterns_scanned)
 		{
-			if (!Pointers::get_credits)
+			if (!Pointers::get_spin_regular)
 			{
 				return 2;
 			}
-			if (!Pointers::get_spin_regular)
+			if (!Pointers::get_spin_super)
 			{
 				return 3;
 			}
-			if (!Pointers::get_spin_super)
+			if (!Pointers::available_in_autoshow_cond)
 			{
 				return 4;
 			}
-			if (!Pointers::available_in_autoshow_cond)
-			{
-				return 6;
-			}
 			if (!Pointers::sqlhijack_query)
 			{
-				return 7;
+				return 5;
 			}
 			/*if (!Pointers::sql)
 			{
-				return 8;
+				return 6;
 			}*/
 			return 1;
 		}

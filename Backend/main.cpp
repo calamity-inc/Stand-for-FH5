@@ -27,7 +27,6 @@ namespace Stand
 		if (State::game_process)
 		{
 			State::game_mod = State::game_process->open();
-			State::get_credits_patch.mod = State::game_mod;
 			return true;
 		}
 		return false;
@@ -41,9 +40,7 @@ namespace Stand
 			State::game_process.reset();
 			State::game_mod.reset();
 			State::patterns_scanned = false;
-			State::get_credits_patch.forget();
 
-			Pointers::get_credits = nullptr;
 			Pointers::get_spin_regular = nullptr;
 			Pointers::get_spin_super = nullptr;
 			Pointers::available_in_autoshow_cond = nullptr;
@@ -77,7 +74,6 @@ namespace Stand
 
 	EXPOSED(void) die()
 	{
-		State::get_credits_patch.unpatch();
 		autoshowAvailableSet(0);
 		if (SqlQueryQueue::ready())
 		{

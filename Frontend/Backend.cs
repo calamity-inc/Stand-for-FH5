@@ -33,14 +33,6 @@ namespace Stand
 		[DllImport(@"Backend.dll", CallingConvention = CallingConvention.Cdecl)]
 		public static extern void getSpinSuper(int amount);
 
-		// lockcr
-
-		[DllImport(@"Backend.dll", CallingConvention = CallingConvention.Cdecl)]
-		public static extern void lockcrSet(int amount);
-
-		[DllImport(@"Backend.dll", CallingConvention = CallingConvention.Cdecl)]
-		public static extern void lockcrUnset();
-
 		// ...
 
 		[DllImport(@"Backend.dll", CallingConvention = CallingConvention.Cdecl)]

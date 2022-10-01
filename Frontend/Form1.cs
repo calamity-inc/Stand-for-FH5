@@ -151,26 +151,6 @@ namespace Stand
 			Backend.getSpinSuper((int)getSpinSuperVal.Value);
 		}
 
-		private void lockcrToggle_CheckedChanged(object sender, EventArgs e)
-		{
-			if (lockcrToggle.Checked)
-			{
-				Backend.lockcrSet((int)lockcrVal.Value);
-			}
-			else
-			{
-				Backend.lockcrUnset();
-			}
-		}
-
-		private void lockcrVal_ValueChanged(object sender, EventArgs e)
-		{
-			if (lockcrToggle.Checked)
-			{
-				Backend.lockcrSet((int)lockcrVal.Value);
-			}
-		}
-
 		private void autoshowAvailableBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			Backend.autoshowAvailableSet(autoshowAvailableBox.SelectedIndex);
