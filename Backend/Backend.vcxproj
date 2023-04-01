@@ -67,7 +67,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>../../Soup/bin/$(Configuration)DLL/Soup.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../../Soup/bin/$(Configuration)DLL $(Platform)/Soup.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -90,7 +90,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>../../Soup/bin/$(Configuration)DLL/Soup.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../../Soup/bin/$(Configuration)DLL $(Platform)/Soup.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <AdditionalOptions>"/pdbaltpath:How dare you?" /base:0x1337694200000000 %(AdditionalOptions)</AdditionalOptions>
     </Link>
